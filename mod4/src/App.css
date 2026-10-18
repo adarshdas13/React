@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root {
+  --warning: #F59E0B; /* Amber - Waiting */
+  --success: #22C55E; /* Green - Completed */
+  --info: #06B6D4;    /* Cyan - In Progress */
+  --text: #E5E7EB;    /* Light gray - Default */
+}
