@@ -33,7 +33,7 @@ function ChildrenProps() {
         </p> 
         <div className="space-y-6">
           <div>
-            <h3 className="text-xl font-bold">Character Profile</h3>
+            <h3 className="text-xl font-bold mb-3">Character Profile</h3>
             <Container layout="grid">
               <Card title="User Profile" color="blue">
                 <p className="mb-2">
