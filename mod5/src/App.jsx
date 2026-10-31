@@ -1,9 +1,9 @@
 import "./App.css";
-import { useState } from "react";
+
 import BasicProps from "./components/BasicProps";
 import ChildrenProps from "./components/ChildrenProps";
 import ComplexProps from "./components/ComplexProps";
-import ThemeToggler from "./components/ThemeToggler";
+import ThemeToggler, { ThemeProvider } from "./components/ThemeToggler";
 import RefProps from "./components/RefProps";
 
 function Navigation() {
@@ -79,7 +79,11 @@ function AppContent() {
 }
 
 function App() {
-  return <AppContent />;
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
 }
 
 export default App;

@@ -31,10 +31,23 @@ export default function RefProps() {
     }
   };
 
+  const getSecondInputValue = () => {
+    if (secondInputRef.current) {
+      alert(`Input value: ${secondInputRef.current.value}`);
+    }
+  };
+
   const clearInput = () => {
     if (inputRef.current) {
       inputRef.current.value = "";
       inputRef.current.focus();
+    }
+  };
+
+  const clearSecondInput = () => {
+    if (secondInputRef.current) {
+      secondInputRef.current.value = "";
+      secondInputRef.current.focus();
     }
   };
 
@@ -63,12 +76,14 @@ export default function RefProps() {
             ref={inputRef}
             label="First Input (with ref)"
             placeholder="Type something..."
+            className="text-black"
           />
 
           <CustomInput
             ref={secondInputRef}
             label="Second Input (with ref)"
             placeholder="Type something else..."
+            className="text-black"
           />
 
           <div className="flex flex-wrap gap-3 mt-4">
@@ -91,10 +106,22 @@ export default function RefProps() {
               Get First Input Value
             </button>
             <button
+              onClick={getSecondInputValue}
+              className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+            >
+              Get Second Input Value
+            </button>
+            <button
               onClick={clearInput}
               className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
             >
               Clear First Input
+            </button>
+            <button
+              onClick={clearSecondInput}
+              className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition"
+            >
+              Clear Second Input
             </button>
           </div>
         </div>
