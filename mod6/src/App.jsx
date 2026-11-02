@@ -1,10 +1,44 @@
 import "./App.css";
-import { CartItem } from "./components/CartItem";
-import { Cart } from "./components/Cart";
-import { ProductCard } from "./components/ProductCard";
+import { useCart } from "./hooks/useCart.js";
+import { products } from "./data/products.js";
+import ProductCard from "./components/ProductCard.jsx";
+import Cart from "./components/Cart.jsx";
 
 function App() {
-  return <div></div>;
+  const {
+    cart,
+    addToCart,
+    removeFromCart,
+    updateQuantity,
+    total,
+  } = useCart();
+
+  return (
+    <div className="app">
+      <header>
+        <h1>Shopping Cart - Using Custom Hooks</h1>
+      </header>
+
+      <main className="products">
+        <section>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAddToCart={addToCart}
+            />
+          ))}
+        </section>
+
+        <Cart
+          cart={cart}
+          onUpdateQuantity={updateQuantity}
+          onRemove={removeFromCart}
+          total={total}
+        />
+      </main>
+    </div>
+  );
 }
 
 export default App;
