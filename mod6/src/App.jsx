@@ -4,7 +4,7 @@ import { products } from "./data/products.js";
 import ProductCard from "./components/ProductCard.jsx";
 import Cart from "./components/Cart.jsx";
 
-function App() {
+export default function App() {
   const {
     cart,
     addToCart,
@@ -40,5 +40,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
